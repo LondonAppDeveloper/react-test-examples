@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import './App.css';
 
-class App extends Component {
+
+class TestFetch extends Component {
   constructor(props) {
     super(props);
-    this.state = {isLoading: false};
+    this.state = { isLoading: false };
     this.handleClick = this.handleClick.bind(this);
   }
 
@@ -29,4 +29,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default TestFetch;

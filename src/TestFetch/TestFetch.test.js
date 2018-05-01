@@ -1,23 +1,17 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
 
 import { shallow } from 'enzyme';
 
+import TestFetch from './TestFetch';
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
-  ReactDOM.unmountComponentAtNode(div);
-});
 
-it('sets isloading to true', () => {
+it('sets isLoading to true when loading', () => {
   global.fetch = jest.fn().mockReturnValue(Promise.resolve({
     ok: true,
     json: () => Promise.resolve({'user': 'test'})
   }));
 
-  const c = shallow(<App />);
+  const c = shallow(<TestFetch />);
   c.instance().handleClick().then(() => {
     expect(c.instance().state.isLoading).toEqual(false);
   });
