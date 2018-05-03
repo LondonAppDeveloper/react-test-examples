@@ -6,7 +6,7 @@ import GetGitHubUserForm from './GetGitHubUserForm';
 import GitHubUser from './GitHubUser';
 
 
-class GetGitHubUserPage extends Component {
+class GitHubUserPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -50,4 +50,4 @@ class GetGitHubUserPage extends Component {
   }
 }
 
-export default GetGitHubUserPage;
+export default GitHubUserPage;

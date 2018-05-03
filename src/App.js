@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import './App.css';
 
-import GetGitHubUserPage from './GetGitHubUser/GetGitHubUserPage';
+import GitHubUserPage from './GetGitHubUser/GitHubUserPage';
 
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <GetGitHubUserPage />
+        <GitHubUserPage />
       </div>
     );
   }

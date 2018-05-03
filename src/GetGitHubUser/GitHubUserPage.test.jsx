@@ -2,7 +2,7 @@ import React from 'react';
 
 import { shallow } from 'enzyme';
 
-import GitHubUserPage from './GetGitHubUserPage';
+import GitHubUserPage from './GitHubUserPage';
 
 
 it('sets isLoading to true when loading', () => {
