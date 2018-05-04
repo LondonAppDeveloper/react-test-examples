@@ -23,3 +23,17 @@ it('sets isLoading to true when loading', async () => {
   await flushPromises();
   expect(c.instance().state.isLoading).toEqual(false);
 });
+
+it('calls api for correct username', () => {
+  global.fetch = jest.fn().mockReturnValue(Promise.resolve({
+    ok: true,
+    json: () => Promise.resolve({'user': 'test'})
+  }));
+
+  const c = shallow(<GitHubUserPage />);
+  c.find('GetGitHubUserForm').prop('onChange')({
+    target: {name: 'username'}}, 'chandler'
+  );
+  c.find('GetGitHubUserForm').prop('onClick')();
+  expect(global.fetch).toBeCalledWith('https://api.github.com/users/chandler');
+});
